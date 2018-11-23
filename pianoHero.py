@@ -172,14 +172,19 @@ while run:
         screen.fill((255,255,255))
         hittextsurface = font.render(str(hits),False,(0,200,0))
         c = 0
+        d = 0
         for n in notes:
             color = (0,0,0)
             if c <= 20 * i:
                 color = (255,0,0)
-                if hm[i] == True:
+                if hm[d] == True:
                     color = (0,255,0)
+            print(c)
+            print(d)
+            print(hm)
             screen.blit(font.render(str(n), True, color), (50+c, 50))
             c = c + 20
+            d = d + 1
         screen.blit(hittextsurface,(0,0))
         pygame.display.update()
 results.append(lapresult)
